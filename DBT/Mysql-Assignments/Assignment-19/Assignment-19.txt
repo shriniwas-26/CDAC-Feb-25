@@ -1,0 +1,23 @@
+mysql> create view v_high_rating as select * from customers where rating = (
+    -> select max(rating) from customers);
+
+mysql> select * from v_high_rating;
+
+--------------------------------------------------------------------------------------------
+
+mysql> create view v_num_sales as (select city, count(*) from salespeople group by city);
+
+mysql> select * from v_num_sales;
+
+--------------------------------------------------------------------------------------------
+
+mysql> create view v_avg_orders as select Sname, avg(amt), count(*) from orders, salespeople where salespeople.Snum = orders.Snum group by Sname;
+
+mysql> select * from v_avg_orders;
+
+--------------------------------------------------------------------------------------------
+
+mysql> create view v_s_people_custmr as select Sname,Cname from salespeople,
+customers where customers.Snum = salespeople.Snum order by 1;
+
+mysql> select * from v_s_people_custmr;

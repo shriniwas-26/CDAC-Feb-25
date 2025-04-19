@@ -1,0 +1,13 @@
+mysql> create index idx_order_odate on orders(Odate);
+
+--------------------------------------------------------------------------------------------
+
+mysql> alter table orders modify column Onum int unique;
+
+--------------------------------------------------------------------------------------------
+
+mysql> CREATE INDEX idx_orders_snum_odate ON Orders(Snum, Odate);
+
+--------------------------------------------------------------------------------------------
+
+mysql> alter table customers add constraint unique_salespeople_rating unique(Cnum,Rating);

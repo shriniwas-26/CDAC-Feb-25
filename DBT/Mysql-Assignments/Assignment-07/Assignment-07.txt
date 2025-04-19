@@ -1,0 +1,23 @@
+mysql> select count(*) from orders where Odate like '%-10-03';
+
+---------------------------------------------------------------------------------
+
+mysql> select count(City) from Customers;
+
+---------------------------------------------------------------------------------
+
+mysql> select o.Cnum, c.Cname, min(o.Amt) from Orders o, Customers c
+    -> where o.Cnum = c.Cnum
+    -> group by o.Cnum, c.Cname;
+
+---------------------------------------------------------------------------------
+
+mysql> select * from customers where Cname like 'G%' order by Cname limit 1;
+
+---------------------------------------------------------------------------------
+
+mysql> select city,max(rating) from customers group by city;
+
+---------------------------------------------------------------------------------
+
+mysql> select Odate, count(distinct Snum) from orders group by Odate;

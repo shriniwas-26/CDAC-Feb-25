@@ -1,0 +1,19 @@
+mysql> select * from orders where Odate in ('1990-10-03','1990-10-04');
+
+--------------------------------------------------------------------------------
+
+mysql> select Cname, Sname from customers, salespeople
+    -> where Sname in ('Peel','Motika');
+
+--------------------------------------------------------------------------------
+
+mysql> select * from customers where Cname >= 'A' and Cname < 'H';
+
+--------------------------------------------------------------------------------
+
+mysql> select * from customers where Cname like 'C%';
+
+--------------------------------------------------------------------------------
+
+mysql> select * from orders where Amt != 0 and Amt is not null;
+

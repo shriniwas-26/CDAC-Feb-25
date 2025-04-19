@@ -1,0 +1,11 @@
+mysql> select * from orders where Cnum = (select Cnum from customers where C
+name = 'Cisneros');
+
+---------------------------------------------------------------------------------------
+
+mysql> select Cname, Rating from customers where Cnum in (select Cnum from o
+rders where amt > (select avg(amt) from orders));
+
+---------------------------------------------------------------------------------------
+
+mysql> select Sname, sales_total.total_sales from (select Snum, sum(amt) as total_sales from orders group by Snum) as sales_total, salespeople where sales_total.total_sales > (select max(amt) from orders);

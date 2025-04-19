@@ -1,0 +1,45 @@
+mysql> select Sname, qty from S, SPJ where SPJ.`S#` = S.`S#`;
+
+--------------------------------------------------------------------------------------------
+
+mysql>  select Pname, sum(qty) from P,SPJ where SPJ.`P#` = P.`P#` group by P.Pname;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Jname,sum(qty) from J,SPJ where SPJ.`J#` = J.`J#` group by Jname;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Sname, Pname, Jname, qty from S,P,J,SPJ where S.`S#` = SPJ.`S#` and P.`P#` = SPJ.`P#` and J.`J#` = SPJ.`J#`;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Sname, Pname, Jname, J.city from S,P,J where S.city = P.city and P.city = J.c
+ity;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Pname, sum(qty) from P,SPJ where SPJ.`P#` = P.`P#` and P.color = 'Red' group by Pname;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Sname, sum(qty) from S,SPJ where SPJ.`S#` = S.`S#` and S.status = 20 group by Sname;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Pname, sum(qty) as Quantity from P,SPJ where SPJ.`P#` = P.`P#` and P.weight >
+ 14 group by Pname;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select j.Jname, j.city from J as j , SPJ as spj where SPJ.`J#` = J.`J#` group by Jna
+me, city having sum(spj.qty) > 500;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Pname, sum(qty) from P, SPJ where SPJ.`P#` = P.`P#` and weight < 15 group by Pname;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Employee.ename, Manager.mname from Employee, Manager
+    -> where Employee.mid = Manager.mid;

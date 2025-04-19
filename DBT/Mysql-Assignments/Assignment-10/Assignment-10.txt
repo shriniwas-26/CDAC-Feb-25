@@ -1,0 +1,9 @@
+mysql> select s1.Sname as 'Salespeople_01' , s2.Sname as 'Salespeople_02' fr
+om salespeople s1, salespeople s2 where s1.Snum < s2.Snum and s1.city = s2.c
+ity;
+
+---------------------------------------------------------------------------------------
+
+mysql> select c2.Cname, c2.city from customers c1, customers c2 where c1.rat
+ing = c2.rating and c1.Cname = 'Hoffman';
+

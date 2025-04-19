@@ -1,0 +1,25 @@
+mysql> select Cname, city, rating, 'High Rating' as rating_category from customers where rating >= 200
+    -> union
+    -> select Cname, city, rating, 'Low Rating' as rating_category from customers where rating < 200;
+
+---------------------------------------------------------------------------------------------
+
+mysql> select Sname as Name, Snum as Number from salespeople
+    -> union
+    -> select Cname as Name, Cnum as Number from customers
+    -> where
+    -> (select count(*) from orders where orders.Cnum = customers.Cnum
+) > 1
+    -> order by Name;
+
+---------------------------------------------------------------------------------------------
+
+mysql> select Snum as ID from salespeople where City = 'San Jose'
+    ->
+    -> union
+    ->
+    -> select Cnum as ID from customers where City = 'San Jose'
+    ->
+    -> union all
+    ->
+    -> select Onum as ID from orders where Odate = '1990-10-03';

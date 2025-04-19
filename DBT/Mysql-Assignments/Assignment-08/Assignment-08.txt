@@ -1,0 +1,13 @@
+mysql> select Onum, Snum, Amt*0.12 as 'Salesperson_Commission' from orders;
+
+---------------------------------------------------------------------------------
+
+mysql> select city, max(rating) as 'rating' from Customers group by city;
+
+---------------------------------------------------------------------------------
+
+mysql> select Rating, Cname, Cnum from customers order by Rating desc;
+
+---------------------------------------------------------------------------------
+
+mysql> select Odate, count(*) as count from orders group by Odate order by 2 desc;

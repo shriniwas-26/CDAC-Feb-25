@@ -1,0 +1,23 @@
+mysql> CREATE TABLE Cityorders (
+    ->  onum INT PRIMARY KEY,
+    -> amt float(7,2),
+    -> Snum int,
+    -> Cnum int,
+    -> City varchar(10),
+    -> FOREIGN KEY (onum) REFERENCES Orders(onum),
+    -> FOREIGN KEY (amt, snum) REFERENCES Orders(amt, snum),
+    -> FOREIGN KEY (cnum, city) REFERENCES Customers(cnum, city)
+    -> );
+
+--------------------------------------------------------------------------------------------
+
+-- Step 1: Add the new column 'prev'
+ALTER TABLE Orders
+ADD prev INT;
+
+-- Step 2: Add the composite foreign key (prev, cnum) → (onum, cnum)
+ALTER TABLE Orders
+ADD CONSTRAINT fk_prev_order
+FOREIGN KEY (prev, cnum)
+REFERENCES Orders(onum, cnum);
+

@@ -1,0 +1,30 @@
+CREATE TABLE Orders (
+    Onum INT PRIMARY KEY,                
+    Amt DECIMAL(10,2),                   
+    Odate DATE NOT NULL,                   
+    Cnum INT,                              
+    Snum INT,                              
+    CONSTRAINT unique_cnum_snum UNIQUE (Cnum, Snum) 
+);
+
+-------------------------------------------------------------------------------------------
+
+CREATE TABLE Salespeople (
+    Snum INT PRIMARY KEY,                     
+    Sname VARCHAR(50) CHECK (Sname BETWEEN 'A' AND 'M'), 
+    City VARCHAR(50),                         
+    Comm DECIMAL(5,2) NOT NULL DEFAULT 0.10   
+);
+
+-------------------------------------------------------------------------------------------
+
+CREATE TABLE Orders (
+    Onum INT NOT NULL,
+    Cnum INT NOT NULL,
+    Snum INT NOT NULL,
+    Amt DECIMAL(10,2),
+    Odate DATE NOT NULL,
+    CONSTRAINT pk_orders PRIMARY KEY (Onum),
+    CONSTRAINT chk_onum_gt_cnum CHECK (Onum > Cnum),
+    CONSTRAINT chk_cnum_gt_snum CHECK (Cnum > Snum)
+);

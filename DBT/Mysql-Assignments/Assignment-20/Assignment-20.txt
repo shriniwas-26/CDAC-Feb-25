@@ -1,0 +1,43 @@
+1) Which of these views are updateable (will allow DML operations)?  
+
+#1  Create View Dailyorders  
+    as Select Distinct cnum, snum, onum, odate from Orders;
+Ans:	Dailyorders view is not updatable because it includes distinct keyword.
+
+#2  Create View Custotals  
+    as Select cname, Sum (amt) Sum_Amt from Orders, Customers   
+    where Orders.cnum=Customers.cnum  
+    Group by cname; 
+Ans:	Custotals view is not updatable because it includes aggregation function like sum(), includes join and group by clause thats why it doesn't allow DML operations and it is not updatable.
+
+#3  Create view Thirdorders  
+    as Select * from Dailyorders  where 
+    odate=’1990-10-03’;  
+Ans:	Thirdorders view is updatable because it doesn't contain any aggregates, GROUP BY, DISTINCT, joins, UNION, or subqueries.
+
+#4  Create view Nullcities   
+    as Select snum, sname, city  
+    from Salespeople  
+    where city is NULL   
+    OR sname BETWEEN ‘A’ and ‘MZ’;  
+Ans: Yes Nullcities view is updatable because it doesn't contain any aggregates, GROUP BY, DISTINCT, joins, UNION, or subqueries.
+
+------------------------------------------------------------------------------------------
+
+mysql> create view Commission as select Snum, Comm from salespeople where comm between .10 and .20 with check option;
+
+------------------------------------------------------------------------------------------
+
+CREATE TABLE Orders (
+    onum INT PRIMARY KEY,
+    odate DATE DEFAULT CURRENT_DATE,  -- Or SYSDATE/CURDATE depending on DB
+    amount DECIMAL(10, 2)
+);
+
+CREATE VIEW Entryorders AS
+SELECT onum, amount
+FROM Orders;
+
+INSERT INTO Entryorders (onum, amount)
+VALUES (201, 500.00);
+

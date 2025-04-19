@@ -1,0 +1,16 @@
+mysql> select * from customers where Rating >= any (select Rating from customers, salespeople where salespeople.Snum = customers.Snum and salespeople.Sname = 'Serres');
+
+---------------------------------------------------------------------------------------------
+
+mysql> select * from salespeople where city != all (select city from custome
+rs);
+
+---------------------------------------------------------------------------------------------
+
+mysql> select * from orders where amt > any (select amt from orders where Cn
+um in (select Cnum from customers where city = 'London'));
+
+---------------------------------------------------------------------------------------------
+
+mysql> select * from orders where amt > (select min(amt) from orders where C
+num in (select Cnum from customers where city = 'London'));

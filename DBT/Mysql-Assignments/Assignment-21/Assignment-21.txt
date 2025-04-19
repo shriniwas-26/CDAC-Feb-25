@@ -1,0 +1,24 @@
+grant update (Rating) ON classwork.Customers to Amit@localhost;
+
+------------------------------------------------------------------------------------------
+
+grant select on classwork.Orders to Manoj@localhost with grant option;
+
+------------------------------------------------------------------------------------------
+
+revoke insert on classwork.salespeople from Ajita@localhost;
+
+------------------------------------------------------------------------------------------
+
+grant insert, update on classwork.Customers TO Abhijeet@localhost;
+
+alter table Customers
+add constraint chk_rating check (Rating between 100 and 500);
+
+------------------------------------------------------------------------------------------
+
+create view LowestRatedCustomers as
+select * from Customers
+where Rating = (select min(Rating) from Customers);
+
+grant select on classwork.LowestRatedCustomers to Vikram@localhost;

@@ -1,0 +1,15 @@
+mysql> insert into salespeople(City,Sname,Comm,Snum) values('San Jose', 'Blanco', null, 1100);
+
+---------------------------------------------------------------------------------------------
+
+mysql> delete from orders where Cnum in (select Cnum from customers where Cname = 'Clemens');
+
+---------------------------------------------------------------------------------------------
+
+mysql> update customers set rating = rating + 100 where city = 'Rome';
+
+---------------------------------------------------------------------------------------------
+
+mysql> update customers set Snum = (select Snum from salespeople where
+ Sname = 'Motika') where Snum = (select Snum from salespeople where Sn
+ame = 'Serres');

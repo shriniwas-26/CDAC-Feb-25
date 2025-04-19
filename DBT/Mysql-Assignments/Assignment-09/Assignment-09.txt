@@ -1,0 +1,17 @@
+mysql> select Onum, Cname from orders, customers where orders.Cnum = custome
+rs.Cnum;
+
+---------------------------------------------------------------------------------------
+
+mysql> select Sname, Cname, orders.Onum from orders, customers, salespeople
+where orders.Cnum = customers.Cnum and orders.Snum = salespeople.Snum;
+
+---------------------------------------------------------------------------------------
+
+mysql> select Cname, Sname, Comm from customers, salespeople where customers.Snum = salespeople.Snum and Comm > 12/100;
+
+---------------------------------------------------------------------------------------
+
+mysql> select o.Onum, c.Cname, s.Sname, o.Amt, o.Amt*s.Comm from orders as o
+ , customers as c , salespeople as s where o.Cnum = c.Cnum and o.Snum = s.Sn
+um and c.rating > 100;

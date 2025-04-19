@@ -1,0 +1,47 @@
+mysql> select min(status) from S;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select max(weight) from P;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select avg(weight) from P;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select sum(qty) from SPJ where `P#` = 'P1';
+
+-------------------------------------------------------------------------------------------
+
+mysql> select `P#`, sum(qty) as total_qty from SPJ group by `P#`;
+
+-------------------------------------------------------------------------------------------
+
+mysql>  select `P#`, avg(qty) as total_qty from SPJ group by `P#`;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select `P#`, max(qty) from SPJ group by `P#` having max(qty) > 800;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select status, count(*) from S group by status;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select city, count(*) from P group by city;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select count(*) - count(status) as difference from S;
+
+-------------------------------------------------------------------------------------------
+
+mysql> select case status
+    -> when 10 then 'Ten'
+    -> when 20 then 'Twenty'
+    -> when 30 then 'Thirty'
+    -> else 'other'
+    -> end as Status, count(*) as Count from S group by status;
+

@@ -1,0 +1,45 @@
+mysql>  select concat(upper(substr(Sname,1,1)),lower(substr(Sname,2))) as Supplier_names from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select upper(Sname) from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select lower(Sname) from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select lpad(Sname,25," ") as Sname from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select replace(Sname,'la','ro') as Sname from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select replace(replace(Sname,'l','r'),'a','o') as Sname from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select Sname, length(Sname) from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select * from S where soundex(Sname) = soundex('BLOKE');
+
+--------------------------------------------------------------------------------------------
+
+mysql>  select Sname, case status
+    -> when 10 then 'Ten'
+    -> when 20 then 'Twenty'
+    -> when 30 then 'Thirty'
+    -> else 'other'
+    ->  end as StatusWord
+    -> from S;
+
+--------------------------------------------------------------------------------------------
+
+mysql> select dayname(curdate()) as today;
+
+
