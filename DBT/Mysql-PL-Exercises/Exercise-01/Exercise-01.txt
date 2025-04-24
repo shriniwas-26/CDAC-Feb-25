@@ -1,0 +1,39 @@
+mysql> create table rect(perimeter float, area float);
+
+mysql> delimiter //
+mysql> create procedure rectangle(L float, W float)
+    -> begin
+    -> declare peri float;
+    -> declare area float;
+    -> set peri = 2*(L+W);
+    -> set area = L*W;
+    -> insert into rect values(peri,area);
+    -> end //
+
+mysql> delimiter ;
+mysql> call rectangle(5,6);
+
+mysql> select * from rect;
+
+-----------------------------------------------------------------------------------------
+mysql> create table tempp(num int, sqr int, cubee int);
+
+mysql> delimiter //
+mysql> create procedure sqrcube()
+    -> begin
+    -> declare num int;
+    -> declare sqr int;
+    -> declare cubee int;
+    -> set num = 4;
+    -> set sqr = num * num;
+    -> set cubee = num * num * num;
+    -> insert into tempp values(num,sqr,cubee);
+    -> end //
+
+mysql> delimiter ;
+mysql> call sqrcube();
+
+mysql> select * from tempp;
+
+-----------------------------------------------------------------------------------------
+

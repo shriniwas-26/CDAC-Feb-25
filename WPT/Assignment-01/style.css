@@ -1,0 +1,47 @@
+.main-cont{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.sub-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid gray;
+    
+}
+.container{
+    width: 250px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #183852;
+    color: #fbfcfc;
+}
+.container-right{
+    width: 500px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.Name{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+.desg {
+    margin-top: 10px;
+}
+.branch{
+    font-weight: bold;
+}
+.p-title{
+    font-weight: bold;
+}
