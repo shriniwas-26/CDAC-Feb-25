@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="signin.css" />
+  </head>
+  <body>
+    <div id="mainContainer">
+      <div id="container">
+        <div id="leftPart">
+          <h1 class="heading">Sign in</h1>
+          <div id="iconCont">
+            <div class="icon">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAtZJREFUSEvlltmrjlEUxn+HUlyIzGQMZQiZyR8gynjhQsYc51whxYWiRClEUjJkigspQynl2sUxZqaUeSpDUmR27Odrv6d9lr2/732/m3Nh1Vvf+37rWc/ea6/1rF1DC1lNC/FSlLgVMB4YAPSAEv4N8BS4BPzOu5G8xH2BdcBcoFMi+EfgFLAFeFxpAZWI27hdrAfWAvqdx34BW102NrrF/kgByhErlefcMyYPW8TnKjALeB3Dp4j7AQ1A9ypJM5hIJwPPbJwYcUfgMjDIOz/yRaSCymMi+Q4M9s4PgEnApxAcIz4CLAqcpjrgBWA0sA0YBiiYHp2n3ocAWuBqQCmeAlwMYhxwKV9ejniCb4vQp79vlzy7zXx0RGqzzBqB4cD97IPd8XFgvmEYBdwqwgoMBe4ZzEFgWYy4NfAe6BAA3vqVvitI3N4fRc8Ap0LrFSMe688n5FjhBGN3QdLMXWe6z2CVCdVGM8lUz50xjqrkJ1USa7evDHaG14ZmxMq/qi80gcMiKbKGdsAXA2jKYFhctcB+4zgSuF2ELfDtDTw32DXAdpvqOV7kQ9+lwOEqiWcCZw12MXDUEksEmvrMA867gpteJfFp14azDXYccM0S613tZMfeQuBYQXJhSjsL7LNv1dLMtgKy1xVTHfDTi4ZaTHYI2BCpUrseDReNQxFbkxQvyT5a4lBxVgI3fIspC3+A68AO4ISJKj3f7PU8NfFGuIvEnRSxvu8EVnkHTZVuTgJPBheBmIR2AaRyKdsVxCz5xFbX1g8KrTArLgVeAHwD9iSiSyxCiczcbvqZ/DXEpdLSB7jid1vv+1sTppxJ4XTGoUmfJwIvLLDc1UdBtGO1mSryISBR6Jpgl1jo/8zuusVPi5GmUh3GleypSjXgdbX9AHROEEtaNYfVEbowbPJHE3WvdMvMQNqJUj7QTZd5CWL17UtfA3Y4/APJS1zheIv//f8R/wWu0n4fd8acIQAAAABJRU5ErkJggg=="
+              />
+            </div>
+            <div class="icon">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAvhJREFUSEvFllmoTlEUx3/XkKEocSNKeTGUMpTuA2UoJcWDB0MyREnhgSvzWOaM5cEDiiThgcSLMpWUEEXKg4i88GDKkHH/a+3ban/nO+d89976Vt3u+dbea/33Xuu/1toN1Eka6oRLW4DHAQOA88C/Wi/QGuDBwCFgqoE9BZYDt2sBrwW4EdgBLAY6ZoBcBVYBL8ocoAxwN2CN/XU3p7+Affa9Guhi33+B48Am4H3eAfKAtTYf2AX0d07uAXOA16bT2m5gHrRw5pvp9gM/sg5QDXg8cBQYnmH0BzgJbExuNQw4CExxNm/t9qdTAqbAKXHkQ6RZBkwKN9oO9DLHXy3cutV3B6ZDHwZGOl0FAT3wmMDU+27zK2BlcHDJ6Xpb6Jc43TtgA+BvJb9zgZ0hOgPd3oXAKf32wNtCOLa6TcrhZuBMRp3qNkrFWLf/ibH6BtABWBDW5NMDK2LS5QJHn95hmnI53wP0cwuXgSHA0Ax+FAIrRM3BaVdnfA1Q6TxPHKrEFOq1oc47JWtfjHAxkoXASkFfaxiLLHTyqdZ4wlKi3Er6AFuApSGnnR3wFSvHjy5VpYCjD4VMzWKac/oTOBAA1TAUGTWZVFpAWgscHTaFUjoC6H+WPADWB8Jdt8V2A45gM6ykRCCJerNa5EW7WZxU7Q4ssAnATQOeGH7fciEQsEildht7QMVhqtVx0fDIA9YEUzcTqaKUBl5nZaAplCV5wH6/ppa6n4aIJJPVs0LRn3NWL60TqSGkUgZYXNDNBznjmcAF/U5DOspeF2r0UZTLFcAzp8sDHmHs9z7u2CUeRh/VcjndajcyV/WqUahy+VCFXGokCqlvOGK8HhEVUcsjkdqfppCaup49ks82cR65ep0MjLaS6mH7dDjl81jQ/84iSRF7ZdMzvCJENr2n4hNHB5A+HiZ+i4zK695Aqk+ZtDRlGeBoryeOHGrOpnYql7OWijd5gEU5zrNNZ/Fde94+LgPYFuBoO9s+fAmWxq4l1KWdltlYN+D/iiOsH1WTB/QAAAAASUVORK5CYII="
+              />
+            </div>
+            <div class="icon">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAkRJREFUSEvl1snLjlEYx/HPa45kZUhhZaNYGEMWFooMURKxIMPKvOEfsGBjKIVMxcKGhSIpVoYFIaQMKUOGopAhMp1T96un03nu57yvxZvcy/v8zvW9rnOuc36nTRd9bV3E9U+BY7KDMQzf8ATvOrpypRX3wkrMw1T0T0DPcA4ncLEkiRLwTOzDiJKAuIPFuFenbwVeU0Fb6VLGx2ormm5BXcBlOFZYZaPsO+bjTGcqnojL6JGZ/DUEvoVreIsxWFDpfoQlXhT+nWqVcK7i7qGJblQB00p2YBs+J4EHYimelkDj3Bx4eWikI0ngWOV43G1VSel4Dnwac5MAa7G3NGiJLgXHZX6Pfg2TY4cOwM+SgKWaFDwSD5LJZ0Mjzc4EjMmU3libsKsxRgoeh+sJZAtiU6VfR8C7Q5Ib68CjcTshbMCeDDhemx8Kl3Zn0G6uAw/ByyTY0WAEK/6y4q3YXgeOY68q92nX3cTYDDg24rTM/1GZE7CkMpA/8txxOl5dBu2iX4hGcb5wWQ9gdYM2zh+EN60qnp6xtti9kzIdn+Yyo7LHbg0DV0PSU1JhM5O4gsmJ+Eu4m9cF1zmUqbxnZYXRPvsm4wtxshQcr8dL6J2BRHN4iOfog+FVkvFVkn7xaE7IbVGdLcZOPly4rznZ66opX3QUHPWxSfY3MZO6nB6Fi2gO7jcTlbwsZuEghhZWH1dpPT7V6UvAcX587K2qXCv32HsczvSF6oYrss5ScHoEG5+3sdHSh0HLxekMuGXQEsH/B/4N9xBeH8WBoaEAAAAASUVORK5CYII="
+              />
+            </div>
+          </div>
+          <div class="mt-1">Or sign in using E-mail Address</div>
+          <div id="formCont">
+            <form>
+              <input
+                class="inputStyle"
+                type="email"
+                placeholder="Email"
+                name=""
+                id=""
+              />
+              <input
+                class="inputStyle"
+                type="password"
+                placeholder="Password"
+                name=""
+                id=""
+              />
+              <div class="fp">Forgot your password?</div>
+              <button class="signin-btn" type="submit">Sign In</button>
+            </form>
+          </div>
+        </div>
+        <div id="rightPart">
+          <h1 class="heading">
+            Create,<br />
+            Account
+          </h1>
+          <div>Signup if you still dont have an account</div>
+          <button class="signup-btn">Sign up</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
